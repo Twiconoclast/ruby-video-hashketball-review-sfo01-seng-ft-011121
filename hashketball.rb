@@ -184,3 +184,23 @@ def player_stats(name)
     end
   end
 end
+
+def big_shoe_rebounds
+  largest = 0
+  player_largest_shoe = ""
+  game_hash.each do |ha, tcp|
+    tcp[:players].each do |player_hash|
+      if player_hash[:shoe] > largest
+        largest = player_hash[:shoe]
+        player_largest_shoe = player_hash[:player_name]
+      end
+    end
+  end
+  game_hash.each do |ha, tcp|
+    tcp[:players].each do |player_hash|
+      if player_hash[:player_name] == player_largest_shoe
+        return player_hash[:rebounds]
+      end
+    end
+  end
+end
