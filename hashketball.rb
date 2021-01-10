@@ -128,5 +128,11 @@ def game_hash
 end
 
 def num_points_scored(name)
-  
+  game_hash.each do |ha, tcp|
+    tcp[:players].each do |player_hash|
+      if player_hash[:player_name] == name
+        return player_hash[:points]
+      end
+    end
+  end
 end
