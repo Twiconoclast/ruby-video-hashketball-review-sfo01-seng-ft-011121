@@ -162,3 +162,15 @@ def team_names
   end
   return teams
 end
+
+def player_numbers(team)
+  team_numbers = []
+  game_hash.each do |ha, tcp|
+    if tcp[:team_name] == team
+      tcp[:players].each do |player_hash|
+        team_numbers << player_hash[:number]
+      end
+    end
+  end
+  return team_numbers
+end
