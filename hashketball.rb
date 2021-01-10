@@ -179,7 +179,6 @@ def player_stats(name)
   game_hash.each do |ha, tcp|
     tcp[:players].each do |player_hash|
       if player_hash[:player_name] == name
-        player_hash.delete(:player_name)
         return player_hash
       end
     end
