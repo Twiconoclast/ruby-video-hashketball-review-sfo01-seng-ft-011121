@@ -154,3 +154,11 @@ def team_colors(team)
     end
   end
 end
+
+def team_names(hash)
+  teams = []
+  hash.each do |ha, tcp|
+    teams << tcp[:team_name]
+  end
+  return teams
+end
