@@ -155,9 +155,9 @@ def team_colors(team)
   end
 end
 
-def team_names(hash)
+def team_names
   teams = []
-  hash.each do |ha, tcp|
+  game_hash.each do |ha, tcp|
     teams << tcp[:team_name]
   end
   return teams
