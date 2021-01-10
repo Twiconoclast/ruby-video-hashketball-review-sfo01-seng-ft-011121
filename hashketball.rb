@@ -146,3 +146,11 @@ def shoe_size(name)
     end
   end
 end
+
+def team_colors(team)
+  game_hash.each do |ha, tcp|
+    if tcp[:team_name] == team
+      return tcp[:colors]
+    end
+  end
+end
